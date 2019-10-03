@@ -57,4 +57,18 @@ li#Impressum, li#Agb, li#Kontakt, li#Hilfe{
  display: inline;
  margin-left: 10px;
  color: #C71585;
+
+}
+
+li.leftborder{
+
+border-left: 1px solid #C71585;
+padding-left: 10px;
+
+}
+
+li#Impressum:hover, li#Agb:hover, li#Kontakt:hover, li#Hilfe:hover {
+
+  color: #FF69B4;
+
 }
