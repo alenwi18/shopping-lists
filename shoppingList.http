@@ -1,0 +1,26 @@
+GET http://shopping-lists-api.herokuapp.com/api/v1/lists/5d9ccd694d9c6c0017d791b7 HTTP/1.1
+
+###
+
+POST /api/v1/lists/5d9ccd694d9c6c0017d791b7/items HTTP/1.1
+Host: shopping-lists-api.herokuapp.com
+Content-Type: application/json
+
+{ "name": "Cola Lolli" }
+
+###
+
+POST /api/v1/lists/5d9ccd694d9c6c0017d791b7/items HTTP/1.1
+Host: shopping-lists-api.herokuapp.com
+Content-Type: application/json
+
+{ "name": "Kakao" }
+###
+
+POST /api/v1/lists/5d9ccd694d9c6c0017d791b7/items HTTP/1.1
+Host: shopping-lists-api.herokuapp.com
+Content-Type: application/json
+
+{ "name": "Nutella" }
+
+
