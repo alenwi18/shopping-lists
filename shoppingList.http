@@ -1,5 +1,5 @@
-GET http://shopping-lists-api.herokuapp.com/api/v1/lists/5d9ccd694d9c6c0017d791b7 HTTP/1.1
-
+GET /api/v1/lists/5d9ccd694d9c6c0017d791b7 HTTP/1.1
+Host: shopping-lists-api.herokuapp.com
 ###
 
 POST /api/v1/lists/5d9ccd694d9c6c0017d791b7/items HTTP/1.1
