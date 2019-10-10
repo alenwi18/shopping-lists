@@ -137,6 +137,7 @@ ul#listBuy li.Einkaufsliste a{
 ul#listBuy li.Einkaufsliste a:hover{
 
   border: 1px solid #C71585;
+  padding: 9px;
 
 }
 
@@ -164,6 +165,36 @@ li.Einkaufsliste{
   color: #C71585;
 
 
+}
+
+button#Müll1, button#Müll2,button#Müll3{
+
+  float: right; 
+  margin-right: 5px ; 
+  margin-top: 3px;
+  border: none;
+  background-color: transparent;
+  height: 30px;
+  
+}
+
+p#neueListe{
+
+  border-top: 1px solid grey;
+  font-family: sans-serif;
+  
+  padding: 10px;
+  color: violet;
+  padding-left: 230px;
+
+}
+
+button#Plus{
+  float: right; 
+  margin-right: 5px ; 
+  margin-top: -3px;
+  border: none;
+  background-color: transparent;
 }
 
 
