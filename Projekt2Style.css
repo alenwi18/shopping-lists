@@ -145,7 +145,6 @@ ul#listBuy li.Einkaufsliste{
 
   padding: 10px;
   
-
 }
 
 ul#listBuy{
@@ -157,6 +156,18 @@ ul#listBuy{
   border-bottom: 1px solid #C71585;
   background-color: rgba(240, 238, 238, 0.805);
   margin-left: 300px; 
+
+}
+
+div#EintragHinzufügen{
+  width: 30%;
+  height: 96%;
+  border-left: 1px solid #C71585; 
+  border-right: 1px solid #C71585; 
+  border-bottom: 1px solid #C71585;
+  background-color: rgba(240, 238, 238, 0.805);
+  margin-left: 300px; 
+
 
 }
 
@@ -180,7 +191,6 @@ button#Müll1, button#Müll2,button#Müll3{
 
 p#neueListe{
 
-  border-top: 1px solid grey;
   font-family: sans-serif;
   
   padding: 10px;
@@ -198,3 +208,22 @@ button#Plus{
 }
 
 
+/*
+.Einkaufsliste{
+
+  padding-left: 300px;
+  display: block;
+  padding: 10px;
+  font-family: sans-serif;
+  margin-left: 10px;
+
+
+}
+
+.Einkaufsliste:hover{
+
+  border: 1px solid #C71585;
+  padding: 9px;
+
+
+}*/
