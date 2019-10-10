@@ -17,9 +17,62 @@
 
         <div class="header"><img id="HomeLogo" src="Bilder/HomeLogo.png"/></div>
 
-        <div class="main"></div>
+        <div class="main">
 
-        <div class="main2"></div>
+            
+            <div id="EinkaufslistenDropDown">
+                
+                <img id="Einkaufskorb" src="Bilder/Einkaufskorb.png"/> 
+
+                
+
+                <button id="DropDownPfeil1"><img id="DropDownPfeil2" src="Bilder/DropDownPfeil.png"/></button>
+
+                <!-- <img id="DropDownPfeil" src="Bilder/DropDownPfeil.png"/> -->
+                <p id="TextEinkaufsliste">EINKAUFSLISTEN</p>
+
+                
+            </div> 
+
+        </div>
+
+        <div class="main2">
+
+            <div class="dropdown" id="EinkaufslistenDropDownInhalt"> 
+                
+                <ul id="listBuy">
+                    <li class="Einkaufsliste"><a>Kindergeburtstag</a></li>
+                    <li class="Einkaufsliste"><a>Home Party</a></li>
+                    <li class="Einkaufsliste"><a>Geburtstags Geschenk</a></li>
+                </ul>
+                
+            </div> 
+
+            <script>
+            const button = document.getElementById("DropDownPfeil1");
+            const list = document.getElementById("listBuy")
+
+            list.style.display="none";
+            button.addEventListener("click",(event) => {
+
+                if(list.style.display=="none"){
+
+                    list.style.display="block";
+
+                } else{
+
+                    list.style.display="none";
+
+                }
+
+            })
+
+            
+            
+            </script>
+            
+            
+        </div>
 
         <div class="footer">
 
@@ -51,3 +104,27 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+            <script type="text(javascript">
+            $(document).ready(function(){
+                $('button').click(function(){
+                    $('ul').toggleClass('active')
+                })
+            })
+            
+            
+            </script> -->
+
+            <!-- <form name="" method="" action=""> -->
+
+                <!-- <input id="DropDownPfeil" name="" type="image" src="Bilder/DropDownPfeil.png" onclick="showHide()"> -->
+
+            <!-- </form> -->

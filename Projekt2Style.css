@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 0.25fr 0.92fr 0.92fr;
-  grid-template-rows: 190px 50px 510px 40px ;
+  grid-template-rows: 165px 50px 510px 40px ;
   column-gap: 0px;
   row-gap: 0px;
 }
@@ -10,6 +10,7 @@
   grid-area: 1 / 1 / 1 / 4;
   /* border: 1px solid #FF69B4; */
   background-color: white; 
+  
 }
 
 .main {
@@ -23,11 +24,13 @@
   /* border: 1px solid #FF69B4; */
   background-color: #FFB6C1;
   background-image: url(Bilder/Main2Candy6.jpg);
+  
 }
 .footer {
   grid-area: 4 / 1 / 5 / 4;
   /* border: 1px solid #FF69B4;  */
   background-color: white;
+  
 }
 
 body{
@@ -50,7 +53,7 @@ height: 38px;
 
 ul#footerListe{
 list-style: none;
-margin-top: 10px;
+margin-top: 20px;
 text-align: center;
 }
 
@@ -70,10 +73,97 @@ li#Impressum:hover, li#Agb:hover, li#Kontakt:hover, li#Hilfe:hover {
 }
 
 img#Main2Hintergrund{
-
   width: 100%;
   height: 100%;
+}
+
+img#Einkaufskorb{
+  width: 30px;
+  height: 30px;
+  float: left;
+  padding-top: 8px;
+  padding-left: 5px;
+}
+
+div#EinkaufslistenDropDown{
+  width: 30%;
+  height: 96%;
+  border: 1px solid #C71585;
+  background-color: rgb(248, 120, 201);
+  margin-left: 300px; 
+}
+
+p#TextEinkaufsliste{
+  font-family: 'Bangers', cursive;
+  color: white;
+  font-size: 20px;
+  padding-top: 14px;
+  padding-left: 50px;
+}
+
+
+
+
+
+button#DropDownPfeil1{
+  float: right;
+  width: 37px;
+  height: 25px;
+  background-color: #C71585;
+  margin-top: 12px;
+  border:1px solid #FFB6C1;
+  margin-right: 5px;
+  
+}
+
+
+img#DropDownPfeil2{
+  width: 25px;
+  height: 20px;
+  margin-left: 0px;
+
+}
+
+ul#listBuy li.Einkaufsliste a{
+
+  padding-left: 10px;
+  display: block;
+  padding: 10px;
+  font-family: sans-serif;
 
 
 }
+
+ul#listBuy li.Einkaufsliste a:hover{
+
+  border: 1px solid #C71585;
+
+}
+
+ul#listBuy li.Einkaufsliste{
+
+  padding: 10px;
+  
+
+}
+
+ul#listBuy{
+
+  width: 30%;
+  height: 96%;
+  border-left: 1px solid #C71585; 
+  border-right: 1px solid #C71585; 
+  border-bottom: 1px solid #C71585;
+  background-color: rgba(240, 238, 238, 0.805);
+  margin-left: 300px; 
+
+}
+
+li.Einkaufsliste{
+
+  color: #C71585;
+
+
+}
+
 
