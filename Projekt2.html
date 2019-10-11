@@ -49,16 +49,13 @@
 
                         <label id="labelZurEingabe">
         
-                                <button id="Auslesen"><img onclick="zurListehinzufugen()" class="kleineBilder" src="Bilder/PfeilKurve.png"/></button>
-                                <input  id="labelZurEingabe" type="text" size="15" placeholder="Neues Item"/>
+                                <button id="Auslesen"><img onclick="addItem()" class="kleineBilder" src="Bilder/PfeilKurve.png"/></button>
+                                <input  id="Eingabe" name="labelZurEingabe" type="text" value="" placeholder="Neues Item"/>
                                 
                         </label>
                         
                         <ul id="ListeEinerEinkaufsliste">
 
-                                <li class="ItemEinerEinkaufsliste">Hallo</li> 
-                                <li class="ItemEinerEinkaufsliste">WasGeht</li>
-        
         
                         </ul>
         
@@ -69,14 +66,35 @@
                 <script>
                 
                 
+                //Hilfe auchtung das hier noch beachten !
+                
 
-                function zurListehinzufugen(){
+                function addItem(){
 
-                    var msg = document.querySelector("#labelZurEingabe").value;
-                    
-                    document.write(msg);
+                let ulListe = document.getElementById("ListeEinerEinkaufsliste");
+                let liElem = document.createElement("li");
+
+                var labelinhalt = document.getElementById("Eingabe").value;
+                
+                
+                liElem.className="ItemEinerEinkaufsliste";
+                
+                liElem.innerHTML=labelinhalt;
+                ulListe.append(liElem);
+
+                liElem.addEventListener('click', function(){
+
+                deleteItem(liElem);
 
 
+                });
+                }
+
+                function deleteItem(pelement){
+
+                    var idDIV=document.getElementById("ListeEinerEinkaufsliste");
+
+                    idDIV.removeChild(pelement);
                 }
                 
                 </script>

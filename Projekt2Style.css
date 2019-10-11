@@ -245,18 +245,18 @@ img.MülleimerBild{
 
 }
 
-input#labelZurEingabe{
+input#Eingabe{
 
   width: 450px;
   height: 35px;
   float: right;
   margin-right: 0px;
-  position: relative;
+  
   border: 1px solid #C71585;
   font-size: 18px;
   text-align: center;
   background-color: rgba(236, 167, 213, 0.505);
-  color: #C71585;
+  color: rgb(236, 12, 12);
 }
 
 
@@ -265,7 +265,7 @@ button#Auslesen{
 float: right;
 height: 40px;
 border: none;
-margin-right: 210px;
+margin-right: 200px;
 background: transparent;
 
 
@@ -278,7 +278,7 @@ ul#ListeEinerEinkaufsliste{
 margin-top: 0px;
 margin-right: -452px;
 float: right;
-width: 450px;
+width: 452px;
 margin-top: 50px;
 
 
@@ -290,6 +290,7 @@ li.ItemEinerEinkaufsliste{
   border: 1px solid #C71585;
   background:  rgba(250, 230, 243, 0.505);
   margin-bottom: 4px;
+  font-family: sans-serif;
   
 
 }
@@ -302,6 +303,12 @@ div.ListeEinerEinkaufsliste{
   
   
   margin-top: 2px;
+
+}
+
+input:focus { 
+  
+  outline: 2px dotted rgb(236, 12, 12);
 
 }
 
