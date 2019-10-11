@@ -117,7 +117,7 @@ button#DropDownPfeil1{
 }
 
 
-img#DropDownPfeil2{
+img.kleineBilder{
   width: 25px;
   height: 20px;
   margin-left: 0px;
@@ -178,7 +178,7 @@ li.Einkaufsliste{
 
 }
 
-button#Müll1, button#Müll2,button#Müll3{
+button#Müll1, button#Müll2,button#Müll3, button.Listeneintrag {
 
   float: right; 
   margin-right: 5px ; 
@@ -186,6 +186,7 @@ button#Müll1, button#Müll2,button#Müll3{
   border: none;
   background-color: transparent;
   height: 30px;
+  background: url(Bilder/Müll.png);
   
 }
 
@@ -227,3 +228,82 @@ button#Plus{
 
 
 }*/
+
+a.EinkaufslisteStyle{
+
+  text-decoration: none;
+  color: #C71585;
+
+}
+
+img.MülleimerBild{
+
+  width: 20px;
+  height: 20px;
+
+
+
+}
+
+input#labelZurEingabe{
+
+  width: 450px;
+  height: 35px;
+  float: right;
+  margin-right: 0px;
+  position: relative;
+  border: 1px solid #C71585;
+  font-size: 18px;
+  text-align: center;
+  background-color: rgba(236, 167, 213, 0.505);
+  color: #C71585;
+}
+
+
+button#Auslesen{
+
+float: right;
+height: 40px;
+border: none;
+margin-right: 210px;
+background: transparent;
+
+
+}
+
+ul#ListeEinerEinkaufsliste{
+
+
+
+margin-top: 0px;
+margin-right: -452px;
+float: right;
+width: 450px;
+margin-top: 50px;
+
+
+}
+
+li.ItemEinerEinkaufsliste{
+
+  padding: 10px;
+  border: 1px solid #C71585;
+  background:  rgba(250, 230, 243, 0.505);
+  margin-bottom: 4px;
+  
+
+}
+
+div.ListeEinerEinkaufsliste{
+
+  border: 1px solid #C71585;
+  width: 200px;
+  padding: 10px;
+  
+  
+  margin-top: 2px;
+
+}
+
+
+

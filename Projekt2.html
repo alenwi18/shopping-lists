@@ -26,7 +26,7 @@
 
                 
 
-                <button id="DropDownPfeil1"><img id="DropDownPfeil2" src="Bilder/DropDownPfeil.png"/></button>
+                <button id="DropDownPfeil1"><img class="kleineBilder" src="Bilder/DropDownPfeil.png"/></button>
 
                 <!-- <img id="DropDownPfeil" src="Bilder/DropDownPfeil.png"/> -->
                 <p id="TextEinkaufsliste">EINKAUFSLISTEN</p>
@@ -34,46 +34,130 @@
                 
             </div> 
 
+
+            
+
         </div>
 
         <div class="main2">
 
-            <div class="dropdown" id="EinkaufslistenDropDownInhalt"> 
+                
+
+                <div id="ItemEinkäufe">
+
+                        
+
+                        <label id="labelZurEingabe">
+        
+                                <button id="Auslesen"><img onclick="zurListehinzufugen()" class="kleineBilder" src="Bilder/PfeilKurve.png"/></button>
+                                <input  id="labelZurEingabe" type="text" size="15" placeholder="Neues Item"/>
+                                
+                        </label>
+                        
+                        <ul id="ListeEinerEinkaufsliste">
+
+                                <li class="ItemEinerEinkaufsliste">Hallo</li> 
+                                <li class="ItemEinerEinkaufsliste">WasGeht</li>
+        
+        
+                        </ul>
+        
+                    </div>
+
+                    
+
+                <script>
+                
+                
+
+                function zurListehinzufugen(){
+
+                    var msg = document.querySelector("#labelZurEingabe").value;
+                    
+                    document.write(msg);
+
+
+                }
+                
+                </script>
+
+                <div class="dropdown" id="EinkaufslistenDropDownInhalt"> 
                 
                 <ul id="listBuy">
-                    <li class="Einkaufsliste"><button class="Listeneintrag" id="Müll1"><img id="DropDownPfeil2" src="Bilder/Müll.png"/></button><a>Kindergeburtstag</a></li>
-                    <li class="Einkaufsliste"><button class="Listeneintrag" id="Müll2"><img id="DropDownPfeil2" src="Bilder/Müll.png"/></button><a>Home Party</a></li>
-                    <li class="Einkaufsliste"><button class="Listeneintrag" id="Müll3"><img id="DropDownPfeil2" src="Bilder/Müll.png"/></button><a>Geburtstags Geschenk</a></li>
                     
                 </ul>
-                <div id="EintragHinzufügen"><p id="neueListe"><button onclick="addListe()" id="Plus"><img id="DropDownPfeil2" src="Bilder/Plus.png"/></button> Neue Liste Anlegen</p></div>
+                <div id="EintragHinzufügen"><p id="neueListe"><button onclick="generateContent()" id="Plus"><img class="kleineBilder" src="Bilder/Plus.png"/></button> Neue Liste Anlegen</p></div>
                 
+
+        
+
             </div> 
 
             <script>
                 
+
+                var i = 1;
+
+                function generateContent() {
+                    var txt;
+                    var person = prompt("Wie ist die ID deiner Einkaufsliste?", "" );
+
+                    if (person == null || person == "") {
+                        txt = "NoNameList";
+                    } else {
+                        txt = ""+person+"";
+                    }
+                    
+                    
+	                let div = document.getElementById("listBuy");
+                    let liElement = document.createElement("li");
+                    let btnElement = document.createElement("button");
+                        btnElement.onclick = "btn"+i+"()";
+                    let imgElement = document.createElement("img");
+                        imgElement.className="MülleimerBild"
+                        imgElement.src="Bilder/Müll.png";
+                    let aElement = document.createElement("a");
+                        aElement.href = "#" + i;
+                        aElement.innerHTML=txt;
+                    
+                        liElement.className="Einkaufsliste";
+                        btnElement.className="Listeneintrag";
+                        aElement.className="EinkaufslisteStyle"
+
+                    
+                        btnElement.append(imgElement);
+                    
+                        liElement.append(btnElement);
+                        liElement.append(aElement);
+                    
+                    
+                        div.append(liElement);
+                        i++;
+                }
                 
                 function addListe(){
 
-                    var idListe=document.getElementById("listBuy");
-                    var newElement = document.createElement("li");
+                var idListe=document.getElementById("listBuy");
+                var newElement = document.createElement("li");
 
-                    
-                    
-                    newElement.textContent="Dynamisch Erzeugt";
 
-                   
-                    
-                    newElement.className="Einkaufsliste";
-                    
-                    idListe.appendChild(newElement);
-                    
 
+
+
+
+                newElement.textContent="Dynamisch Erzeugt";
+
+
+
+                newElement.className="Einkaufsliste";
+
+
+                idListe.appendChild(newElement);
 
                 }
 
-
-
+                    
+        
             </script>
 
             <script>
@@ -103,6 +187,7 @@
             })
 
             </script>
+            
             
             
         </div>
@@ -161,3 +246,18 @@
                 <!-- <input id="DropDownPfeil" name="" type="image" src="Bilder/DropDownPfeil.png" onclick="showHide()"> -->
 
             <!-- </form> -->
+
+
+            <!-- <div> -->
+
+                    <!-- <ul id="ListeEinerEinkaufsliste"> -->
+
+                        <!-- <li class="ItemEinerEinkaufsliste">Hallo</li>  -->
+                        <!-- <li class="ItemEinerEinkaufsliste">WasGeht</li> -->
+
+
+                    <!-- </ul> -->
+
+
+
+                <!-- </div>*/ -->
