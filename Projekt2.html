@@ -82,6 +82,8 @@
                 liElem.innerHTML=labelinhalt;
                 ulListe.append(liElem);
 
+                
+
                 liElem.addEventListener('click', function(){
 
                 deleteItem(liElem);
@@ -116,51 +118,56 @@
 
                 var i = 1;
 
+                var removeListe = (id) => {
+                    let node = document.querySelector("#li" + id);
+                    node.parentElement.removeChild(node);
+                }
+
                 function generateContent() {
                     var txt;
                     var person = prompt("Wie ist die ID deiner Einkaufsliste?", "" );
-
-                    if (person == null || person == "") {
-                        txt = "NoNameList";
-                    } else {
-                        txt = ""+person+"";
-                    }
-                    
                     
 	                let div = document.getElementById("listBuy");
                     let liElement = document.createElement("li");
+                    liElement.id = "li" + person;
                     let btnElement = document.createElement("button");
-                        btnElement.onclick = "btn"+i+"()";
+                        btnElement.setAttribute("onclick", "removeListe('"+person+"')");
                     let imgElement = document.createElement("img");
                         imgElement.className="MülleimerBild"
                         imgElement.src="Bilder/Müll.png";
                     let aElement = document.createElement("a");
-                        aElement.href = "#" + i;
-                        aElement.innerHTML=txt;
-                    
+                        aElement.href = "#" + person;
+                        
+
                         liElement.className="Einkaufsliste";
                         btnElement.className="Listeneintrag";
-                        aElement.className="EinkaufslisteStyle"
+                        aElement.className="EinkaufslisteStyle";
 
+                        if (person == null || person == "") {
+                        //txt = "NoNameList";
+                        } else {
+                        txt = ""+person+"";
+                        div.append(liElement);
+                        
+                        }
+                    
+                        aElement.innerHTML=txt;
+                        
                     
                         btnElement.append(imgElement);
                     
                         liElement.append(btnElement);
                         liElement.append(aElement);
-                    
-                    
-                        div.append(liElement);
-                        i++;
+
+                        
                 }
+
+                
                 
                 function addListe(){
 
                 var idListe=document.getElementById("listBuy");
                 var newElement = document.createElement("li");
-
-
-
-
 
 
                 newElement.textContent="Dynamisch Erzeugt";
@@ -202,7 +209,7 @@
 
 
 
-            })
+            });
 
             </script>
             
