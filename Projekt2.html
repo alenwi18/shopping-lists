@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="Bilder/rosaBonbon.png">
@@ -10,242 +11,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eine etwas süßere Einkaufsliste</title>
 </head>
-<body>
-    
-   
-    <div class="grid-container">
 
-        <div class="header"><img id="HomeLogo" src="Bilder/HomeLogo.png"/></div>
+<body>
+    <div class="grid-container">
+        <div class="header"><img id="HomeLogo" src="Bilder/HomeLogo.png" /></div>
 
         <div class="main">
-
-            
             <div id="EinkaufslistenDropDown">
-                
-                <img id="Einkaufskorb" src="Bilder/Einkaufskorb.png"/> 
+                <img id="Einkaufskorb" src="Bilder/Einkaufskorb.png" />
 
-                
-
-                <button id="DropDownPfeil1"><img class="kleineBilder" src="Bilder/DropDownPfeil.png"/></button>
-
+                <button id="DropDownPfeil1"><img class="kleineBilder" src="Bilder/DropDownPfeil.png" /></button>
                 <!-- <img id="DropDownPfeil" src="Bilder/DropDownPfeil.png"/> -->
                 <p id="TextEinkaufsliste">EINKAUFSLISTEN</p>
-
-                
-            </div> 
-
-
-            
-
+            </div>
         </div>
 
         <div class="main2">
+            <div id="ItemEinkäufe">
+                <label id="labelZurEingabe">
+                    <button id="Auslesen"><img onclick="createItem()" class="kleineBilder"
+                            src="Bilder/PfeilKurve.png" /></button>
+                    <input id="Eingabe" name="labelZurEingabe" type="text" value="" placeholder="Neues Item" />
+                </label>
 
-                
+                <ul id="ListeEinerEinkaufsliste"></ul>
+            </div>
 
-                <div id="ItemEinkäufe">
-
-                        
-
-                        <label id="labelZurEingabe">
-        
-                                <button id="Auslesen"><img onclick="addItem()" class="kleineBilder" src="Bilder/PfeilKurve.png"/></button>
-                                <input  id="Eingabe" name="labelZurEingabe" type="text" value="" placeholder="Neues Item"/>
-                                
-                        </label>
-                        
-                        <ul id="ListeEinerEinkaufsliste">
-
-        
-                        </ul>
-        
-                    </div>
-
-                    
-
-                <script>
-                
-                
-                //Hilfe auchtung das hier noch beachten !
-                
-
-                function addItem(){
-
-                let ulListe = document.getElementById("ListeEinerEinkaufsliste");
-                let liElem = document.createElement("li");
-
-                var labelinhalt = document.getElementById("Eingabe").value;
-                
-                
-                liElem.className="ItemEinerEinkaufsliste";
-                
-                liElem.innerHTML=labelinhalt;
-                ulListe.append(liElem);
-
-                
-
-                liElem.addEventListener('click', function(){
-
-                deleteItem(liElem);
-
-
-                });
-                }
-
-                function deleteItem(pelement){
-
-                    var idDIV=document.getElementById("ListeEinerEinkaufsliste");
-
-                    idDIV.removeChild(pelement);
-                }
-                
-                </script>
-
-                <div class="dropdown" id="EinkaufslistenDropDownInhalt"> 
-                
-                <ul id="listBuy">
-                    
-                </ul>
-                <div id="EintragHinzufügen"><p id="neueListe"><button onclick="generateContent()" id="Plus"><img class="kleineBilder" src="Bilder/Plus.png"/></button> Neue Liste Anlegen</p></div>
-                
-
-        
-
-            </div> 
-
-            <script>
-                
-
-                var i = 1;
-
-                var removeListe = (id) => {
-                    let node = document.querySelector("#li" + id);
-                    node.parentElement.removeChild(node);
-                }
-
-                function generateContent() {
-                    var txt;
-                    var person = prompt("Wie ist die ID deiner Einkaufsliste?", "" );
-                    
-	                let div = document.getElementById("listBuy");
-                    let liElement = document.createElement("li");
-                    liElement.id = "li" + person;
-                    let btnElement = document.createElement("button");
-                        btnElement.setAttribute("onclick", "removeListe('"+person+"')");
-                    let imgElement = document.createElement("img");
-                        imgElement.className="MülleimerBild"
-                        imgElement.src="Bilder/Müll.png";
-                    let aElement = document.createElement("a");
-                        aElement.href = "#" + person;
-                        
-
-                        liElement.className="Einkaufsliste";
-                        btnElement.className="Listeneintrag";
-                        aElement.className="EinkaufslisteStyle";
-
-                        if (person == null || person == "") {
-                        //txt = "NoNameList";
-                        } else {
-                        txt = ""+person+"";
-                        div.append(liElement);
-                        
-                        }
-                    
-                        aElement.innerHTML=txt;
-                        
-                    
-                        btnElement.append(imgElement);
-                    
-                        liElement.append(btnElement);
-                        liElement.append(aElement);
-
-                        
-                }
-
-                
-                
-                function addListe(){
-
-                var idListe=document.getElementById("listBuy");
-                var newElement = document.createElement("li");
-
-
-                newElement.textContent="Dynamisch Erzeugt";
-
-
-
-                newElement.className="Einkaufsliste";
-
-
-                idListe.appendChild(newElement);
-
-                }
-
-                    
-        
-            </script>
-
-            <script>
-            const button = document.getElementById("DropDownPfeil1");
-            const list = document.getElementById("listBuy")
-            const div = document.getElementById("EintragHinzufügen")
-
-            list.style.display="none";
-            div.style.display="none";
-            button.addEventListener("click",(event) => {
-
-                if(list.style.display=="none"&& div.style.display=="none"){
-
-                    list.style.display="block";
-                    div.style.display="block";
-                    
-
-                } else{
-
-                    list.style.display="none";
-                    div.style.display="none"
-
-                }
-
-
-
-            });
-
-            </script>
-            
-            
-            
+            <div class="dropdown" id="EinkaufslistenDropDownInhalt">
+                <ul id="listBuy"></ul>
+                <div id="EintragHinzufügen">
+                    <p id="neueListe"><button onclick="getListe()" id="Plus"><img class="kleineBilder"
+                                src="Bilder/Plus.png" /></button> Neue Liste Anlegen</p>
+                </div>
+            </div>
         </div>
 
         <div class="footer">
 
-        <div id="footerText">
-            
-            <ul id="footerListe">
-              <li id="Impressum">Impressum</li>
-              <li class="leftborder" id="Agb">AGB & Datenschutz</li>
-              <li class="leftborder" id="Kontakt">Kontakt</li>
-              <li class="leftborder" id="Hilfe">Hilfe</li>
-            </ul>
+            <div id="footerText">
+
+                <ul id="footerListe">
+                    <li id="Impressum">Impressum</li>
+                    <li class="leftborder" id="Agb">AGB & Datenschutz</li>
+                    <li class="leftborder" id="Kontakt">Kontakt</li>
+                    <li class="leftborder" id="Hilfe">Hilfe</li>
+                </ul>
+
+            </div>
 
         </div>
-        
     </div>
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
+    <script src="App.js"></script>
 </body>
+
 </html>
 
 
@@ -266,23 +84,23 @@
             
             </script> -->
 
-            <!-- <form name="" method="" action=""> -->
+<!-- <form name="" method="" action=""> -->
 
-                <!-- <input id="DropDownPfeil" name="" type="image" src="Bilder/DropDownPfeil.png" onclick="showHide()"> -->
+<!-- <input id="DropDownPfeil" name="" type="image" src="Bilder/DropDownPfeil.png" onclick="showHide()"> -->
 
-            <!-- </form> -->
-
-
-            <!-- <div> -->
-
-                    <!-- <ul id="ListeEinerEinkaufsliste"> -->
-
-                        <!-- <li class="ItemEinerEinkaufsliste">Hallo</li>  -->
-                        <!-- <li class="ItemEinerEinkaufsliste">WasGeht</li> -->
+<!-- </form> -->
 
 
-                    <!-- </ul> -->
+<!-- <div> -->
+
+<!-- <ul id="ListeEinerEinkaufsliste"> -->
+
+<!-- <li class="ItemEinerEinkaufsliste">Hallo</li>  -->
+<!-- <li class="ItemEinerEinkaufsliste">WasGeht</li> -->
+
+
+<!-- </ul> -->
 
 
 
-                <!-- </div>*/ -->
+<!-- </div>*/ -->

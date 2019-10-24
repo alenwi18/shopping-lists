@@ -119,7 +119,7 @@ button#DropDownPfeil1{
 
 img.kleineBilder{
   width: 25px;
-  height: 20px;
+  height: 23px;
   margin-left: 0px;
 
 }
@@ -176,6 +176,10 @@ li.Einkaufsliste{
   color: #C71585;
 
 
+}
+
+li.Einkaufsliste.liActive {
+  background-color: #f9d9f9;
 }
 
 button#Müll1, button#Müll2,button#Müll3, button.Listeneintrag {
@@ -311,6 +315,66 @@ input:focus {
   outline: 2px dotted rgb(236, 12, 12);
 
 }
+
+.checkBox{
+
+  width: 25px;
+  height: 25px;
+  float: right;
+  margin-top: -35px;
+  margin-right: 10px;
+  border: 1px solid #f9d9f9;
+
+
+}
+
+@media (max-width: 600px){
+
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 0.25fr 0.92fr 0.92fr;
+    grid-template-rows: 0px 50px 610px 0px ;
+    column-gap: 0px;
+    row-gap: 0px;
+  }
+
+  .header {
+    grid-area: 1 / 1 / 1 / 4;
+    /* border: 1px solid #FF69B4; */
+    background-color: white; 
+    
+  }
+  
+  .main {
+    grid-area: 2 / 2 / 3 / 4;
+    /* border: 1px solid #FF69B4; */
+    background-color: #FFE4E1;
+    
+  }
+  .main2 {
+    grid-area: 3 / 2 / 4 / 4;
+    /* border: 1px solid #FF69B4; */
+    background-color: #FFB6C1;
+    background-image: url(Bilder/Main2Candy6.jpg);
+    
+  }
+  
+
+  img#HomeLogo{
+    display: none;
+  }
+
+  .footer{
+
+    display: none;
+
+
+  }
+
+
+}
+
 
 
 
