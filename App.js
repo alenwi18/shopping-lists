@@ -151,7 +151,14 @@ function addItem(name, id) {
     ulListe.append(liElem);
     checkbox.type="checkbox";
     checkbox.className="checkBox";
-    ulListe.append(checkbox);
+    liElem.append(checkbox);
+
+    checkbox.addEventListener('click', function(event){
+
+        event.stopPropagation();
+
+
+    });
 
     liElem.addEventListener('click', function () {
         deleteItem(id);
