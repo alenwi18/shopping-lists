@@ -38,8 +38,10 @@ body{
 }
 
 img#HomeLogo{
-width: 198px;
-height: 188px;
+width: 298px;
+height: 182px;
+margin-left:10px;
+
 }
 
 div#footerText{
