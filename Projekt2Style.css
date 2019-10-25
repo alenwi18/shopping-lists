@@ -11,6 +11,7 @@
   /* border: 1px solid #FF69B4; */
   background-color: white; 
   
+  
 }
 
 .main {
@@ -38,8 +39,8 @@ body{
 }
 
 img#HomeLogo{
-width: 298px;
-height: 182px;
+width: 368px;
+height: 162px;
 margin-left:10px;
 
 }
@@ -329,52 +330,7 @@ input:focus {
 
 }
 
-@media (max-width: 600px){
 
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: 0.25fr 0.92fr 0.92fr;
-    grid-template-rows: 0px 50px 610px 0px ;
-    column-gap: 0px;
-    row-gap: 0px;
-  }
-
-  .header {
-    grid-area: 1 / 1 / 1 / 4;
-    /* border: 1px solid #FF69B4; */
-    background-color: white; 
-    
-  }
-  
-  .main {
-    grid-area: 2 / 2 / 3 / 4;
-    /* border: 1px solid #FF69B4; */
-    background-color: #FFE4E1;
-    
-  }
-  .main2 {
-    grid-area: 3 / 2 / 4 / 4;
-    /* border: 1px solid #FF69B4; */
-    background-color: #FFB6C1;
-    background-image: url(Bilder/Main2Candy6.jpg);
-    
-  }
-  
-
-  img#HomeLogo{
-    display: none;
-  }
-
-  .footer{
-
-    display: block;
-
-
-  }
-
-
-}
 
 
 
