@@ -366,7 +366,7 @@ input:focus {
 
   .footer{
 
-    display: none;
+    display: block;
 
 
   }
