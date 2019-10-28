@@ -126,7 +126,7 @@ function refreshItems() {
         if (!selList)
             return; // HILFE keine Liste :/
         for (item of selList.items) {
-            addItem(item.name, item._id);
+            addItem(item.name, item._id, item.bought);
         }
     }
 }
@@ -140,7 +140,7 @@ function refreshItems() {
     idListe.appendChild(newElement);
 }*/
 
-function addItem(name, id) {
+function addItem(name, id, checked) {
     let ulListe = document.getElementById("ListeEinerEinkaufsliste");
     let liElem = document.createElement("li");
     let checkbox = document.createElement("input")
@@ -151,6 +151,11 @@ function addItem(name, id) {
     ulListe.append(liElem);
     checkbox.type="checkbox";
     checkbox.className="checkBox";
+
+    //Checkbox 
+    checkbox.checked = checked;
+    checkbox.setAttribute('onchange', "changeState('"+id+"', this.checked)");
+
     liElem.append(checkbox);
 
     checkbox.addEventListener('click', function(event){
@@ -165,9 +170,37 @@ function addItem(name, id) {
     });
 }
 
+//neu hinzugefügt 
+function changeState(id, checked) {
+    var request = new XMLHttpRequest();
+    request.open('PUT', settings.endpoint + "/api/v1/lists/" + data.selectedList + "/items/" + id, true);
+    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    request.send(JSON.stringify({bought: checked}));
+
+    request.onload = function () {
+        if (this.status >= 200 && this.status < 400) {
+            var resData = JSON.parse(this.response);
+            for (var i = 0; i < data.lists.length; i++) {
+                if (data.selectedList == data.lists[i]._id) {
+                    data.lists[i] = resData;
+                    break;
+                }
+            }
+            refreshItems();
+        } else {
+            console.log("Error: " + this.status);
+        }
+    }
+    request.onerror = function () {
+        console.error("Connection Error");
+    };
+}
+
+
+
 function createItem() {
     if (!data.selectedList)
-        return; // Hilfe keine Liste
+        return; 
 
     var name = document.getElementById("Eingabe").value;
 
@@ -195,12 +228,7 @@ function createItem() {
     };
 }
 
-function boxChecked(){
 
-
-
-
-}
 
 function deleteItem(id) {
     var item = document.querySelector("#it" + id);

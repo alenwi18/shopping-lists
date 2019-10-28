@@ -168,7 +168,7 @@ div#EintragHinzufügen{
   border-left: 1px solid #C71585; 
   border-right: 1px solid #C71585; 
   border-bottom: 1px solid #C71585;
-  background-color: rgba(240, 238, 238, 0.805);
+  background-color: rgba(240, 238, 238, 0.905);
   margin-left: 300px; 
 
 
@@ -262,7 +262,7 @@ input#Eingabe{
   border: 1px solid #C71585;
   font-size: 18px;
   text-align: center;
-  background-color: rgba(236, 167, 213, 0.505);
+  background-color: rgba(236, 167, 213, 0.905);
   color: rgb(236, 12, 12);
 }
 
@@ -295,7 +295,7 @@ li.ItemEinerEinkaufsliste{
 
   padding: 10px;
   border: 1px solid #C71585;
-  background:  rgba(250, 230, 243, 0.505);
+  background:  rgba(250, 230, 243, 0.805);
   margin-bottom: 4px;
   font-family: sans-serif;
   
