@@ -352,11 +352,17 @@ input:focus {
     background-color: #FFE4E1;
     
   }
+  /*
   .main2 {
     grid-area: 3 / 2 / 4 / 4;
-    /* border: 1px solid #FF69B4; */
+    border: 1px solid #FF69B4;
     background-color: #FFB6C1;
     background-image: url(Bilder/Main2Candy6.jpg);
+    
+  }
+  */
+
+  .main2 {
     
   }
   
@@ -367,7 +373,7 @@ input:focus {
 
   .footer{
 
-    display: block;
+    display: none;
 
 
   }
