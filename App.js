@@ -41,13 +41,18 @@ var removeListe = (id) => {
   data.lists = data.lists.filter((val) => val._id != id);
   let node = document.querySelector("#li" + id);
   node.parentElement.removeChild(node);
-  if (data.lists.length > 0) {
+  
+  if (data.lists.length < 0) {
     if (id == data.selectedList)
       switchListe(data.lists[data.lists.length - 1]._id);
+      
   } else {
     data.selectedList = "";
+    refreshItems();
   }
+
 }
+
 
 function getListe() {
   var txt;
@@ -72,12 +77,15 @@ function getListe() {
       liElement.id = "li" + person;
       let btnElement = document.createElement("button");
       btnElement.setAttribute("onclick", "removeListe('" + person + "')");
+      btnElement.addEventListener('click', function (event) {
+        event.stopPropagation();
+
+      });
       let imgElement = document.createElement("img");
       imgElement.className = "MülleimerBild"
       imgElement.src = "Bilder/Müll.png";
       let aElement = document.createElement("a");
       aElement.href = "#" + person;
-
       liElement.className = "Einkaufsliste";
       btnElement.className = "Listeneintrag";
       aElement.className = "EinkaufslisteStyle";
@@ -226,7 +234,6 @@ function createItem() {
 }
 
 
-
 function deleteItem(id) {
   var item = document.querySelector("#it" + id);
   item.parentElement.removeChild(item);
@@ -252,6 +259,9 @@ function deleteItem(id) {
     console.error("Connection Error");
   };
 }
+
+
+
 
 console.info("Script loaded..");
 init();
