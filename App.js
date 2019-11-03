@@ -41,15 +41,15 @@ var removeListe = (id) => {
   data.lists = data.lists.filter((val) => val._id != id);
   let node = document.querySelector("#li" + id);
   node.parentElement.removeChild(node);
-
+  
   if (data.lists.length < 0) {
     if (id == data.selectedList)
       switchListe(data.lists[data.lists.length - 1]._id);
-
   } else {
     data.selectedList = "";
     refreshItems();
   }
+ 
 
 }
 
@@ -98,9 +98,12 @@ function getListe() {
       }
 
       aElement.innerHTML = txt;
+
       btnElement.append(imgElement);
+
       liElement.append(btnElement);
       liElement.append(aElement);
+
       switchListe(person);
 
     } else {
