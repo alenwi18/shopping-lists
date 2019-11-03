@@ -329,6 +329,222 @@ input:focus {
 
 }
 
+#leftbar {
+  display: none;
+}
+
+#zeigebar {
+  display: none;
+}
+
+
+@media screen and (max-width: 1432px) and (min-width: 786px) {
+  div#EinkaufslistenDropDown {
+    width: 30%;
+    height: 96%;
+    border: 1px solid #C71585;
+    background-color: rgb(248, 120, 201);
+    margin-left: 187px;
+}
+
+button#Auslesen {
+  float: right;
+  height: 40px;
+  border: none;
+  background: transparent;
+  margin-right: 80px;
+}
+
+input#Eingabe {
+  height: 35px;
+  float: right;
+  margin-right: 0px;
+  border: 1px solid #C71585;
+  font-size: 18px;
+  text-align: center;
+  background-color: rgba(236, 167, 213, 0.905);
+  color: rgb(236, 12, 12);
+  width: 30%;
+}
+
+img#HomeLogo {
+  width: 275px;
+  height: 120px;
+  margin-left: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.25fr 0.92fr 0.92fr;
+  grid-template-rows: 120px 50px 490px 40px ;
+  column-gap: 0px;
+  row-gap: 0px;
+}
+
+}
+
+
+
+@media screen and (max-width: 786px) and (min-width: 500px) {
+  
+
+  button#Auslesen {
+    float: right;
+    height: 40px;
+    border: none;
+    margin-right: 0px;
+    background: transparent;
+    width: 9%;
+}
+
+div#EinkaufslistenDropDown {
+  width: 50%;
+  height: 96%;
+  border: 1px solid #C71585;
+  background-color: rgb(248, 120, 201);
+  margin-left: 0px;
+}
+
+input#Eingabe {
+  height: 35px;
+  float: right;
+  margin-right: 0px;
+  border: 1px solid #C71585;
+  font-size: 18px;
+  text-align: center;
+  background-color: rgba(236, 167, 213, 0.905);
+  color: rgb(236, 12, 12);
+  width: 40%;
+}
+
+}
+
+@media screen and (max-width: 500px) and (min-width: 300px) {
+  
+  div#EinkaufslistenDropDown {
+    width: 100%;
+    height: 96%;
+    border: 1px solid #C71585;
+    background-color: rgb(248, 120, 201);
+    margin-left: 0px;
+}
+
+button#Auslesen {
+  height: 40px;
+  border: none;
+  background: transparent;
+  position: fixed;
+  margin-right: 0px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.25fr 0.92fr 0.92fr;
+  grid-template-rows: 50px 50px 515px 40px ;
+  column-gap: 0px;
+  row-gap: 0px;
+}
+
+img#HomeLogo {
+  width: 209px;
+  height: 92px;
+  margin-left: 67px;
+}
+
+p#TextEinkaufsliste {
+  font-family: 'Bangers', cursive;
+  color: white;
+  font-size: 20px;
+  padding-top: 14px;
+  padding-left: 34%;
+}
+
+img#Main2Hintergrund{
+  visibility: hidden;
+}
+
+#leftbar {
+  position: fixed;
+    width: 200px;
+    left: 0;
+    top: 0;
+    background: #c71585;
+    z-index: 9;
+    height: 100%;
+}
+
+#zeigebar {
+  display: block;
+  position: fixed;
+  top: 16px;
+  left: 9px;
+  height: 62px;
+  width: 55px;
+}
+
+#Xen {
+  position: fixed;
+  z-index: 19;
+  background: fuchsia;
+  width: 33px;
+  height: 30px;
+  margin-left: 5%;
+}
+
+#Übersicht {
+  color: white;
+  position: fixed;
+  top: 10%;
+  margin-left: 10%;
+  font-size: 17px;
+}
+
+#sweetList {
+  position: fixed;
+  left: 7%;
+  color: black;
+  width: 40%;
+  border-right: none;
+  padding: 10px;
+  background: pink;
+  border: 1px solid rgb(248, 120, 201);
+  top: 20%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+#acci {
+  color: #ffc0cb;
+  position: fixed;
+  top: 33%;
+  margin-left: 10%;
+  font-size: 27px;
+}
+
+.main {
+    position: fixed;
+    left: 0;
+    z-index: 99;
+    width: 53%;
+    top: 54px;
+}
+
+i.fas.fa-clipboard-list {
+  position: fixed;
+  font-size: 50px;
+  color: mediumvioletred;
+  top: 24px;
+  left: 7px;
+} 
+
+#butt {
+  position: fixed;
+  z-index: 99;
+  left: 20px;
+  top: 50px;
+}
+
+}
 
 
 
