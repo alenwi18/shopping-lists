@@ -337,6 +337,13 @@ input:focus {
   display: none;
 }
 
+#butt {
+  display: none;
+}
+
+#mobile_liste {
+  display: none;
+}
 
 @media screen and (max-width: 1432px) and (min-width: 786px) {
   div#EinkaufslistenDropDown {
@@ -381,6 +388,14 @@ img#HomeLogo {
   row-gap: 0px;
 }
 
+#butt {
+  display: none;
+}
+
+#mobile_liste{
+  display: none;
+}
+
 }
 
 
@@ -415,6 +430,13 @@ input#Eingabe {
   background-color: rgba(236, 167, 213, 0.905);
   color: rgb(236, 12, 12);
   width: 40%;
+}
+#butt {
+  display: none;
+}
+
+#mobile_liste {
+  display: none;
 }
 
 }
@@ -542,6 +564,11 @@ i.fas.fa-clipboard-list {
   z-index: 99;
   left: 20px;
   top: 50px;
+  display: block;
+}
+
+#mobile_liste {
+  display: block;
 }
 
 }
