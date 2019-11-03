@@ -3,17 +3,49 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="Bilder/rosaBonbon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="Bilder/FavIcon.png">
     <link rel="stylesheet" href="Reset.css">
     <link rel="stylesheet" href="Projekt2Style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/edafd3d595.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eine etwas süßere Einkaufsliste</title>
+    <script>
+
+        $(document).ready(function(){
+            $("#EinkaufslistenDropDown").hide();
+          $("button").click(function(){
+            $("#leftbar").show();
+            $("#EinkaufslistenDropDown").show();
+            $("body").css("position", "fixed");
+            $("body").css("left", "200px");
+            $("body").css("right", "-200px");
+          });
+          $("button#Xen").click(function(){
+            $("#leftbar").hide();
+            $("#EinkaufslistenDropDown").hide();
+            $("body").css("position", "fixed");
+            $("body").css("left", "0px");
+            $("body").css("right", "0px");
+          });
+        });
+        
+        </script>
 </head>
 
 <body>
     <div class="grid-container">
+        <div id="TextEinkaufsliste"><button id="butt">x</button><i class="fas fa-clipboard-list"></i></div>
+        <div id="leftbar">
+            <div><button id="Xen">X</button></div>
+            <div id="Übersicht">Listenübersicht<i class="fas fa-plus-circle" aria-hidden="true" style="color: #FFB6C1;margin-left: 19px; font-size: 150%;"></i></div>
+            <div id="sweetList">Die süße Liste</div>
+            <div id="acci">Account</div>
+            <div>Anmelden</div>
+            <div>Hile</div>
+        </div>
         <div class="header"><img id="HomeLogo" src="Bilder/HomeLogo.png" /></div>
 
         <div class="main">
@@ -22,7 +54,7 @@
 
                 <button id="DropDownPfeil1"><img class="kleineBilder" src="Bilder/DropDownPfeil.png" /></button>
                 <!-- <img id="DropDownPfeil" src="Bilder/DropDownPfeil.png"/> -->
-                <p id="TextEinkaufsliste">EINKAUFSLISTEN</p>
+                
             </div>
         </div>
 
@@ -65,10 +97,6 @@
 </body>
 
 </html>
-
-
-
-
 
 
 
