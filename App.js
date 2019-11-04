@@ -316,8 +316,8 @@ $(document).ready(function(){
     $("#mobile_listen_auf").css("visibility", "visible");
     $("#leftbar").hide();
     $("body").css("position", "unset");
-    $("body").css("left", "unset");
-    $("body").css("right", "unset");
+    $("body").animate({left: "0px"});
+    $("body").animate({right: "0px"});
   });
 
 

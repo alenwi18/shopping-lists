@@ -814,6 +814,14 @@ button#Auslesen {
 
 }
 
+@media screen and (max-width: 500px) and (min-width: 470px) {
+  li.ItemEinerEinkaufsliste {
+    width: 95%;
+    margin-left: 9px;
+}
+
+}
+
 @media screen and (max-width: 400px) and (min-width: 300px) {
   li.ItemEinerEinkaufsliste {
     width: 71%;
@@ -845,5 +853,13 @@ input#Eingabe {
 button#Auslesen {
   padding-left: 19px;
 }
+
+}
+
+@media screen and (max-width: 351px) and (min-width: 200px) {
+  li.ItemEinerEinkaufsliste {
+    width: 55%;
+    margin-left: 10px;
+  }
 
 }
