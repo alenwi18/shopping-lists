@@ -816,22 +816,22 @@ button#Auslesen {
 
 @media screen and (max-width: 400px) and (min-width: 300px) {
   li.ItemEinerEinkaufsliste {
-    width: 75%;
-    margin-left: 7px;
+    width: 71%;
+    margin-left: 16px;
 }
 
 input#Eingabe {
-  margin-right: 8px;
-  width: 95.5%;
+  margin-right: 16px;
+  width: 91%;
 }
 
 button#Auslesen {
-  padding-left: 15px;
+  padding-left: 26px;
 }
 
 }
 
-@media screen and (max-width: 321px) and (min-width: 200px) {
+@media screen and (max-width: 351px) and (min-width: 200px) {
   li.ItemEinerEinkaufsliste {
     width: 61%;
     margin-left: 10px;
