@@ -24,6 +24,16 @@ function init() {
 
     }
   });
+
+  if (localStorage.getItem("data")) {
+    data = JSON.parse(localStorage.getItem("data"));
+    if (data.lists) {
+      for (var liste of data.lists) {
+        addListe(liste._id);
+      }
+      switchListe(data.selectedList);
+    }
+  }
 }
 
 var switchListe = (id) => {
@@ -33,15 +43,15 @@ var switchListe = (id) => {
   }
   data.selectedList = id;
   document.querySelector("#li" + id).classList.add("liActive");
-
   refreshItems();
+  localStorage.setItem("data", JSON.stringify(data));
 }
 
 var removeListe = (id) => {
   data.lists = data.lists.filter((val) => val._id != id);
   let node = document.querySelector("#li" + id);
   node.parentElement.removeChild(node);
-  
+
   if (data.lists.length < 0) {
     if (id == data.selectedList)
       switchListe(data.lists[data.lists.length - 1]._id);
@@ -49,8 +59,8 @@ var removeListe = (id) => {
     data.selectedList = "";
     refreshItems();
   }
- 
 
+  localStorage.setItem("data", JSON.stringify(data));
 }
 
 
@@ -71,41 +81,11 @@ function getListe() {
       data.lists.push(resData);
 
       //// FRONTEND LISTE
-      let div = document.getElementById("listBuy");
-      let liElement = document.createElement("li");
-      liElement.setAttribute("onclick", "switchListe('" + person + "')");
-      liElement.id = "li" + person;
-      let btnElement = document.createElement("button");
-      btnElement.setAttribute("onclick", "removeListe('" + person + "')");
-      btnElement.addEventListener('click', function (event) {
-        event.stopPropagation();
-
-      });
-      let imgElement = document.createElement("img");
-      imgElement.className = "MülleimerBild"
-      imgElement.src = "Bilder/Müll.png";
-      let aElement = document.createElement("a");
-      aElement.href = "#" + person;
-      liElement.className = "Einkaufsliste";
-      btnElement.className = "Listeneintrag";
-      aElement.className = "EinkaufslisteStyle";
-
-      if (person == null || person == "") {
-        //txt = "NoNameList";
-      } else {
-        txt = "" + resData.name + "";
-        div.append(liElement);
-      }
-
-      aElement.innerHTML = txt;
-
-      btnElement.append(imgElement);
-
-      liElement.append(btnElement);
-      liElement.append(aElement);
+      addListe(resData._id);
 
       switchListe(person);
 
+      localStorage.setItem("data", JSON.stringify(data));
     } else {
       console.error("Error: " + this.status);
       console.error(this.response);
@@ -120,6 +100,45 @@ function getListe() {
   request.send();
 }
 
+function addListe(id) {
+  var curList;
+  for (let i = 0; i < data.lists.length; i++) {
+    if (data.lists[i]._id == id) {
+      curList = data.lists[i];
+      break;
+    }
+  }
+  let div = document.getElementById("listBuy");
+  let liElement = document.createElement("li");
+  liElement.setAttribute("onclick", "switchListe('" + curList._id + "')");
+  liElement.id = "li" + curList._id;
+  let btnElement = document.createElement("button");
+  btnElement.setAttribute("onclick", "removeListe('" + curList._id + "')");
+  btnElement.addEventListener('click', function (event) {
+    event.stopPropagation();
+  });
+  let imgElement = document.createElement("img");
+  imgElement.className = "MülleimerBild"
+  imgElement.src = "Bilder/Müll.png";
+  let aElement = document.createElement("a");
+  aElement.href = "#" + curList._id;
+  liElement.className = "Einkaufsliste";
+  btnElement.className = "Listeneintrag";
+  aElement.className = "EinkaufslisteStyle";
+
+  var txt = "hilfe";
+  if (curList._id == null || curList._id == "") {
+    //txt = "NoNameList";
+  } else {
+    txt = "" + curList.name + "";
+    div.append(liElement);
+  }
+
+  aElement.innerHTML = txt;
+  btnElement.append(imgElement);
+  liElement.append(btnElement);
+  liElement.append(aElement);
+}
 
 function refreshItems() {
   document.getElementById("ListeEinerEinkaufsliste").innerHTML = "";
@@ -132,21 +151,12 @@ function refreshItems() {
       }
     }
     if (!selList)
-      return; // HILFE keine Liste :/
+      return;
     for (item of selList.items) {
       addItem(item.name, item._id, item.bought);
     }
   }
 }
-
-
-/*function addListe() {
-    var idListe = document.getElementById("listBuy");
-    var newElement = document.createElement("li");
-    newElement.textContent = "Dynamisch Erzeugt";
-    newElement.className = "Einkaufsliste";
-    idListe.appendChild(newElement);
-}*/
 
 function addItem(name, id, checked) {
   let ulListe = document.getElementById("ListeEinerEinkaufsliste");
@@ -175,7 +185,6 @@ function addItem(name, id, checked) {
   });
 }
 
-//neu hinzugefügt 
 function changeState(id, checked) {
   var request = new XMLHttpRequest();
   request.open('PUT', settings.endpoint + "/api/v1/lists/" + data.selectedList + "/items/" + id, true);
@@ -192,6 +201,7 @@ function changeState(id, checked) {
         }
       }
       refreshItems();
+      localStorage.setItem("data", JSON.stringify(data));
     } else {
       console.log("Error: " + this.status);
     }
@@ -200,8 +210,6 @@ function changeState(id, checked) {
     console.error("Connection Error");
   };
 }
-
-
 
 function createItem() {
   if (!data.selectedList)
@@ -224,6 +232,7 @@ function createItem() {
         }
       }
       refreshItems();
+      localStorage.setItem("data", JSON.stringify(data));
     } else {
       console.log("Error: " + this.status);
     }
@@ -232,7 +241,6 @@ function createItem() {
     console.error("Connection Error");
   };
 }
-
 
 function deleteItem(id) {
   var item = document.querySelector("#it" + id);
@@ -251,6 +259,7 @@ function deleteItem(id) {
           break;
         }
       }
+      localStorage.setItem("data", JSON.stringify(data));
     } else {
       console.log("Error: " + this.status);
     }
@@ -260,8 +269,49 @@ function deleteItem(id) {
   };
 }
 
-
-
-
 console.info("Script loaded..");
 init();
+
+$(document).ready(function () {
+  $("#mobile_listen_auf").click(function () {
+    $("#EinkaufslistenDropDown").css("visibility", "visible");
+    $(".main").css("visibility", "visible");
+    $("#EintragHinzufügen").css("visibility", "visible");
+    $("#mobile_listen_auf").css("visibility", "hidden");
+    $("#leftbar").show();
+    $("#EinkaufslistenDropDown").show();
+    $("body").css("position", "fixed");
+    $("body").animate({ left: "200px" });
+    $("body").animate({ right: "-200px" });
+  });
+  $("button#Xen").click(function () {
+    $("#EinkaufslistenDropDown").css("visibility", "hidden");
+    $(".main").css("visibility", "hidden");
+    $("#EintragHinzufügen").css("visibility", "hidden");
+    $("#mobile_listen_auf").css("visibility", "visible");
+    $("#leftbar").hide();
+    $("body").css("position", "unset");
+    $("body").css("left", "unset");
+    $("body").css("right", "unset");
+  });
+
+
+  $(window).resize(checkSize);
+
+});
+
+var smallerBefore = false;
+
+function checkSize() {
+  if ($(".jqueryTrigger").css("float") == "none" && smallerBefore == true) {
+    location.reload();
+  } else if ($(".jqueryTrigger").css("float") == "left") {
+    smallerBefore = true;
+  }
+}
+
+
+
+
+
+
