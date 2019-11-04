@@ -43,7 +43,9 @@ var switchListe = (id) => {
   }
   data.selectedList = id;
   document.querySelector("#li" + id).classList.add("liActive");
+
   refreshItems();
+
   localStorage.setItem("data", JSON.stringify(data));
 }
 
@@ -135,7 +137,9 @@ function addListe(id) {
   }
 
   aElement.innerHTML = txt;
+
   btnElement.append(imgElement);
+
   liElement.append(btnElement);
   liElement.append(aElement);
 }
@@ -151,12 +155,13 @@ function refreshItems() {
       }
     }
     if (!selList)
-      return;
+      return; // HILFE keine Liste :/
     for (item of selList.items) {
       addItem(item.name, item._id, item.bought);
     }
   }
 }
+
 
 function addItem(name, id, checked) {
   let ulListe = document.getElementById("ListeEinerEinkaufsliste");
@@ -185,6 +190,7 @@ function addItem(name, id, checked) {
   });
 }
 
+//neu hinzugefügt 
 function changeState(id, checked) {
   var request = new XMLHttpRequest();
   request.open('PUT', settings.endpoint + "/api/v1/lists/" + data.selectedList + "/items/" + id, true);
@@ -210,6 +216,8 @@ function changeState(id, checked) {
     console.error("Connection Error");
   };
 }
+
+
 
 function createItem() {
   if (!data.selectedList)
@@ -242,6 +250,7 @@ function createItem() {
   };
 }
 
+
 function deleteItem(id) {
   var item = document.querySelector("#it" + id);
   item.parentElement.removeChild(item);
@@ -269,8 +278,12 @@ function deleteItem(id) {
   };
 }
 
+
+
+
 console.info("Script loaded..");
 init();
+
 
 $(document).ready(function () {
   $("#mobile_listen_auf").click(function () {
