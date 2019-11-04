@@ -12,49 +12,27 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eine etwas süßere Einkaufsliste</title>
-    <script>
-
-        $(document).ready(function(){
-            $("#EinkaufslistenDropDown").hide();
-          $("#butt").click(function(){
-            $("#leftbar").show();
-            $("#EinkaufslistenDropDown").show();
-            $("body").css("position", "fixed");
-            $("body").css("left", "200px");
-            $("body").css("right", "-200px");
-          });
-          $("button#Xen").click(function(){
-            $("#leftbar").hide();
-            $("#EinkaufslistenDropDown").hide();
-            $("body").css("position", "fixed");
-            $("body").css("left", "0px");
-            $("body").css("right", "0px");
-          });
-        });
-        
-        </script>
+    
 </head>
 
 <body>
     <div class="grid-container">
-        <div id="TextEinkaufsliste"><button id="butt">x</button><i id="mobile_liste" class="fas fa-clipboard-list"></i></div>
+        <div id="TextEinkaufsliste"><i id="mobile_listen_auf" class="fas fa-clipboard-list"></i></div>
         <div id="leftbar">
-            <div><button id="Xen">X</button></div>
-            <div id="Übersicht">Listenübersicht<i class="fas fa-plus-circle" aria-hidden="true" style="color: #FFB6C1;margin-left: 19px; font-size: 150%;"></i></div>
-            <div id="sweetList">Die süße Liste</div>
-            <div id="acci">Account</div>
-            <div>Anmelden</div>
-            <div>Hile</div>
+            <div><button id="Xen"></button></div>
+            <!--  <div id="Übersicht">Listenübersicht<i class="fas fa-plus-circle" aria-hidden="true" style="color: #FFB6C1;margin-left: 19px; font-size: 150%;"></i></div>-->
         </div>
-        <div class="header"><img id="HomeLogo" src="Bilder/HomeLogo.png" /></div>
+        <div class="header"><img id="HomeLogo" src="Bilder/HomeLogo.png" />
+        
+        </div>
 
         <div class="main">
             <div id="EinkaufslistenDropDown">
-                <img id="Einkaufskorb" src="Bilder/Einkaufskorb.png" />
+                <img id="Einkaufskorb" src="Bilder/Einkaufskorb.png" /> 
 
                 <button id="DropDownPfeil1"><img class="kleineBilder" src="Bilder/DropDownPfeil.png" /></button>
                 <!-- <img id="DropDownPfeil" src="Bilder/DropDownPfeil.png"/> -->
-                
+                <p id="TextEinkaufsliste">EINKAUFSLISTEN</p>
             </div>
         </div>
 
@@ -93,42 +71,10 @@
 
         </div>
     </div>
+    <span class="jqueryTrigger"></span>
     <script src="App.js"></script>
 </body>
 
 </html>
 
 
-
-
-<!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-            <script type="text(javascript">
-            $(document).ready(function(){
-                $('button').click(function(){
-                    $('ul').toggleClass('active')
-                })
-            })
-            
-            
-            </script> -->
-
-<!-- <form name="" method="" action=""> -->
-
-<!-- <input id="DropDownPfeil" name="" type="image" src="Bilder/DropDownPfeil.png" onclick="showHide()"> -->
-
-<!-- </form> -->
-
-
-<!-- <div> -->
-
-<!-- <ul id="ListeEinerEinkaufsliste"> -->
-
-<!-- <li class="ItemEinerEinkaufsliste">Hallo</li>  -->
-<!-- <li class="ItemEinerEinkaufsliste">WasGeht</li> -->
-
-
-<!-- </ul> -->
-
-
-
-<!-- </div>*/ -->

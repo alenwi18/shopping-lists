@@ -94,6 +94,7 @@ div#EinkaufslistenDropDown{
   border: 1px solid #C71585;
   background-color: rgb(248, 120, 201);
   margin-left: 300px; 
+  visibility: visible;
 }
 
 p#TextEinkaufsliste{
@@ -267,6 +268,8 @@ input#Eingabe{
 }
 
 
+
+
 button#Auslesen{
 
 float: right;
@@ -337,21 +340,51 @@ input:focus {
   display: none;
 }
 
-#butt {
+#mobile_listen_auf {
   display: none;
 }
 
-#mobile_liste {
-  display: none;
-}
+/* 786px */
 
-@media screen and (max-width: 1432px) and (min-width: 786px) {
+@media screen and (max-width: 1432px) and (min-width: 825px) {
   div#EinkaufslistenDropDown {
-    width: 30%;
+    width: 34%;
     height: 96%;
     border: 1px solid #C71585;
     background-color: rgb(248, 120, 201);
-    margin-left: 187px;
+    margin-left: 162px;
+    visibility: visible;
+}
+
+li.ItemEinerEinkaufsliste {
+  width: 84.3%;
+}
+
+ul#listBuy {
+  width: 34%;
+  height: 96%;
+  border-left: 1px solid #C71585;
+  border-right: 1px solid #C71585;
+  border-bottom: 1px solid #C71585;
+  background-color: rgba(240, 238, 238, 0.905);
+  margin-left: 162px;
+}
+
+div#EintragHinzufügen {
+  width: 34%;
+  height: 96%;
+  border-left: 1px solid #C71585;
+  border-right: 1px solid #C71585;
+  border-bottom: 1px solid #C71585;
+  background-color: rgba(240, 238, 238, 0.905);
+  margin-left: 162px;
+}
+
+ul#ListeEinerEinkaufsliste {
+  width: 35% !important;
+    margin-right: -35% !important;
+  float: right;
+  margin-top: 50px;
 }
 
 button#Auslesen {
@@ -371,37 +404,88 @@ input#Eingabe {
   text-align: center;
   background-color: rgba(236, 167, 213, 0.905);
   color: rgb(236, 12, 12);
-  width: 30%;
+  width: 31%;
 }
 
 img#HomeLogo {
-  width: 275px;
-  height: 120px;
+  width: 315px;
+  height: 140px;
   margin-left: 10px;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 0.25fr 0.92fr 0.92fr;
-  grid-template-rows: 120px 50px 490px 40px ;
+  grid-template-rows: 140px 50px 490px 40px ;
   column-gap: 0px;
   row-gap: 0px;
 }
 
-#butt {
+#mobile_listen_auf {
   display: none;
 }
 
-#mobile_liste{
-  display: none;
+p#neueListe {
+  font-family: sans-serif;
+  padding: 10px;
+  color: #C71585;
+  text-align: right;
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+ul#ListeEinerEinkaufsliste {
+  margin-top: 0px;
+  margin-right: -438px;
+  float: right;
+  width: 438px;
+  margin-top: 50px;
 }
 
 }
 
 
 
-@media screen and (max-width: 786px) and (min-width: 500px) {
+@media screen and (max-width: 825px) and (min-width: 500px) {
   
+
+  div#EintragHinzufügen {
+    width: 50%;
+    height: 96%;
+    border-left: 1px solid #C71585;
+    border-right: 1px solid #C71585;
+    border-bottom: 1px solid #C71585;
+    background-color: rgba(240, 238, 238, 0.905);
+    margin-left: 0px;
+}
+
+ul#listBuy {
+  width: 50%;
+  height: 96%;
+  border-left: 1px solid #C71585;
+  border-right: 1px solid #C71585;
+  border-bottom: 1px solid #C71585;
+  background-color: rgba(240, 238, 238, 0.905);
+  margin-left: 0px;
+}
+
+li.ItemEinerEinkaufsliste {
+  padding: 10px;
+  border: 1px solid #C71585;
+  background: rgba(250, 230, 243, 0.805);
+  margin-bottom: 4px;
+  font-family: sans-serif;
+  width: 58.9%;
+}
+
+
+
+p#neueListe {
+  font-family: sans-serif;
+  padding: 10px;
+  color: #C71585;
+  text-align: right;
+}
 
   button#Auslesen {
     float: right;
@@ -418,6 +502,7 @@ div#EinkaufslistenDropDown {
   border: 1px solid #C71585;
   background-color: rgb(248, 120, 201);
   margin-left: 0px;
+  visibility: visible;
 }
 
 input#Eingabe {
@@ -431,41 +516,104 @@ input#Eingabe {
   color: rgb(236, 12, 12);
   width: 40%;
 }
-#butt {
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.25fr 0.92fr 0.92fr;
+  grid-template-rows: 100px 50px 467px 40px;
+  column-gap: 0px;
+  row-gap: 0px;
+}
+
+img#HomeLogo {
+  width: 220px;
+  height: 97px;
+  margin-left: 10px;
+}
+
+#mobile_listen_auf {
   display: none;
 }
 
-#mobile_liste {
-  display: none;
-}
 
 }
 
-@media screen and (max-width: 500px) and (min-width: 300px) {
+@media screen and (max-width: 706px) and (min-width: 500px) {
+  li.ItemEinerEinkaufsliste {
+    width: 50.8%;
+}
+
+
+}
+
+
+
+@media screen and (max-width: 656px) and (min-width: 500px) {
+  li.ItemEinerEinkaufsliste {
+    width: 44.8%;
+}
+
+
+}
+
+
+@media screen and (max-width: 870) and (min-width: 500px) {
+
+  /* input[type="checkbox"], input[type="radio"] { 
+    visibility: hidden;
+ } */
+
+}
+
+
+
+
+@media screen and (max-width: 500px) and (min-width: 0px) {
   
   div#EinkaufslistenDropDown {
-    width: 100%;
-    height: 96%;
+    width: 198px;
+    height: 65%;
     border: 1px solid #C71585;
     background-color: rgb(248, 120, 201);
     margin-left: 0px;
+    padding-bottom: 18px;
+    top: 0;
+    visibility: hidden;
+  }
+
+  li.ItemEinerEinkaufsliste {
+    width: 105.8%;
 }
 
-button#Auslesen {
+  input#Eingabe {
+    height: 35px;
+    
+    margin-right: 0px;
+    border: 1px solid #C71585;
+    font-size: 18px;
+    text-align: center;
+    background-color: rgba(236, 167, 213, 0.905);
+    color: rgb(236, 12, 12);
+    width: 100%;
+  }
+
+  button#Auslesen {
   height: 40px;
   border: none;
   background: transparent;
   position: fixed;
   margin-right: 0px;
-}
+  }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 0.25fr 0.92fr 0.92fr;
-  grid-template-rows: 50px 50px 515px 40px ;
-  column-gap: 0px;
-  row-gap: 0px;
-}
+  
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 0.25fr 0.92fr 0.92fr;
+    grid-template-rows: 50px 50px 515px 40px ;
+    column-gap: 0px;
+    row-gap: 0px;
+  }
 
 img#HomeLogo {
   width: 209px;
@@ -478,11 +626,12 @@ p#TextEinkaufsliste {
   color: white;
   font-size: 20px;
   padding-top: 14px;
-  padding-left: 34%;
+  padding-left: 20%;
 }
 
-img#Main2Hintergrund{
-  visibility: hidden;
+
+.main2 {
+  background-image: url(Bilder/Main2CandyPicMobil.jpg);
 }
 
 #leftbar {
@@ -490,10 +639,19 @@ img#Main2Hintergrund{
     width: 200px;
     left: 0;
     top: 0;
-    background: #c71585;
+    background: rgba(236, 167, 213, 0.805);
     z-index: 9;
     height: 100%;
 }
+
+/*#leftbar {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  text-align: left;
+  position: relative;
+  background: rgba(236, 167, 213, 0.805);
+}*/
 
 #zeigebar {
   display: block;
@@ -507,10 +665,13 @@ img#Main2Hintergrund{
 #Xen {
   position: fixed;
   z-index: 19;
-  background: fuchsia;
-  width: 33px;
-  height: 30px;
-  margin-left: 5%;
+  background: #0000008a;
+  width: 100%;
+  height: 100%;
+  margin-left: 199px;
+  border-left: 2px solid #C71585;
+  border-top: 2px solid #C71585;
+  border-bottom: 2px solid #C71585;
 }
 
 #Übersicht {
@@ -533,6 +694,7 @@ img#Main2Hintergrund{
   top: 20%;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  visibility: hidden;
 }
 
 #acci {
@@ -544,12 +706,14 @@ img#Main2Hintergrund{
 }
 
 .main {
-    position: fixed;
-    left: 0;
-    z-index: 99;
-    width: 53%;
-    top: 54px;
+  position: fixed;
+  left: 0;
+  z-index: 99;
+  width: 53%;
+  top: 54px;
+  visibility: hidden;
 }
+
 
 i.fas.fa-clipboard-list {
   position: fixed;
@@ -557,23 +721,129 @@ i.fas.fa-clipboard-list {
   color: mediumvioletred;
   top: 24px;
   left: 7px;
-} 
+}
 
-#butt {
+#mobile_listen_auf {
+  display: block;
+}
+
+ul#listBuy {
+  visibility: visible;
+  width: 198px;
+  height: auto;
+  border-left: 1px solid #C71585;
+  border-right: 1px solid #C71585;
+  border-bottom: 1px solid #C71585;
+  background-color: rgba(240, 238, 238, 0.905);
+  margin-left: -200px;
+  z-index: 9999999999999;
   position: fixed;
-  z-index: 99;
-  left: 20px;
-  top: 50px;
-  display: block;
+  margin-top: 45px;
 }
 
-#mobile_liste {
-  display: block;
-}
-
+ul#listBuy li.Einkaufsliste {
+  padding: 10px;
+  margin-top: 6px;
+  z-index: 9999;
 }
 
 
 
+div#EintragHinzufügen {
+  visibility: hidden;
+  margin-left: 0px;
+  width: 198px;
+  text-align: right;
+  position: fixed;
+  height: 7%;
+  left: 0px;
+  z-index: 99999999999;
+  border-bottom: 1px solid #C71585;
+
+}
+
+.main {
+  visibility: hidden;
+  position: fixed;
+  height: 6%;
+  width: 40%;
+}
+
+p#neueListe {
+  font-family: sans-serif;
+  padding: 10px;
+  color: #C71585;
+  padding-top: 15px;
+  padding-left: 0px;
+}
 
 
+ul#ListeEinerEinkaufsliste {
+  margin-right: -452px;
+  float: right;
+  width: 452px;
+  margin-top: 50px;
+  position: fixed; 
+}
+
+
+
+
+}
+
+.jqueryTrigger {float: none;}
+@media screen and (max-width: 500px) {
+  .jqueryTrigger {float: left;}
+}
+
+
+@media screen and (max-width: 500px) and (min-width: 400px) {
+  li.ItemEinerEinkaufsliste {
+    width: 82%;
+    margin-left: 9px;
+}
+
+input#Eingabe {
+  width: 95%;
+  margin-right: 10px;
+}
+
+button#Auslesen {
+  padding-left: 15px;
+}
+
+}
+
+@media screen and (max-width: 400px) and (min-width: 300px) {
+  li.ItemEinerEinkaufsliste {
+    width: 75%;
+    margin-left: 7px;
+}
+
+input#Eingabe {
+  margin-right: 8px;
+  width: 95.5%;
+}
+
+button#Auslesen {
+  padding-left: 15px;
+}
+
+}
+
+@media screen and (max-width: 321px) and (min-width: 200px) {
+  li.ItemEinerEinkaufsliste {
+    width: 61%;
+    margin-left: 10px;
+}
+
+input#Eingabe {
+  margin-right: 11px;
+  width: 93%;
+}
+
+button#Auslesen {
+  padding-left: 19px;
+}
+
+}
