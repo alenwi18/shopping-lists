@@ -12,23 +12,25 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eine etwas süßere Einkaufsliste</title>
-    
+
 </head>
 
 <body>
     <div class="grid-container">
+            <div><i id="theme" class="fas fa-palette"></i></div>
+            <div><i id="theme2" class="fas fa-palette"></i></div>
         <div id="TextEinkaufsliste"><i id="mobile_listen_auf" class="fas fa-clipboard-list"></i></div>
         <div id="leftbar">
             <div><button id="Xen"></button></div>
             <!--  <div id="Übersicht">Listenübersicht<i class="fas fa-plus-circle" aria-hidden="true" style="color: #FFB6C1;margin-left: 19px; font-size: 150%;"></i></div>-->
         </div>
         <div class="header"><img id="HomeLogo" src="Bilder/HomeLogo.png" />
-        
+
         </div>
 
         <div class="main">
             <div id="EinkaufslistenDropDown">
-                <img id="Einkaufskorb" src="Bilder/Einkaufskorb.png" /> 
+                <img id="Einkaufskorb" src="Bilder/Einkaufskorb.png" />
 
                 <button id="DropDownPfeil1"><img class="kleineBilder" src="Bilder/DropDownPfeil.png" /></button>
                 <!-- <img id="DropDownPfeil" src="Bilder/DropDownPfeil.png"/> -->
@@ -45,13 +47,15 @@
                 </label>
 
                 <ul id="ListeEinerEinkaufsliste"></ul>
+                
             </div>
 
             <div class="dropdown" id="EinkaufslistenDropDownInhalt">
                 <ul id="listBuy"></ul>
                 <div id="EintragHinzufügen">
-                    <p id="neueListe"><button onclick="getListe()" id="Plus"><img class="kleineBilder"
-                                src="Bilder/Plus.png" /></button> Neue Liste Anlegen</p>
+                    <p id="neueListe"><button onclick="getListe()" id="Plus"><img class="kleineBilder" id="plusimg"
+                                src="Bilder/Plus.png" /> 
+                                <i id="fontplus" class="fas fa-plus-circle"></i></button> Neue Liste Anlegen</p>
                 </div>
             </div>
         </div>
@@ -76,5 +80,3 @@
 </body>
 
 </html>
-
-

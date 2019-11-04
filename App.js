@@ -25,10 +25,10 @@ function init() {
     }
   });
 
-  if(localStorage.getItem("data")) {
+  if (localStorage.getItem("data")) {
     data = JSON.parse(localStorage.getItem("data"));
-    if(data.lists) {
-      for(var liste of data.lists) {
+    if (data.lists) {
+      for (var liste of data.lists) {
         addListe(liste._id);
       }
       switchListe(data.selectedList);
@@ -53,7 +53,7 @@ var removeListe = (id) => {
   data.lists = data.lists.filter((val) => val._id != id);
   let node = document.querySelector("#li" + id);
   node.parentElement.removeChild(node);
-  
+
   if (data.lists.length < 0) {
     if (id == data.selectedList)
       switchListe(data.lists[data.lists.length - 1]._id);
@@ -61,7 +61,7 @@ var removeListe = (id) => {
     data.selectedList = "";
     refreshItems();
   }
- 
+
   localStorage.setItem("data", JSON.stringify(data));
 }
 
@@ -104,8 +104,8 @@ function getListe() {
 
 function addListe(id) {
   var curList;
-  for(let i = 0; i < data.lists.length; i++) {
-    if(data.lists[i]._id == id) {
+  for (let i = 0; i < data.lists.length; i++) {
+    if (data.lists[i]._id == id) {
       curList = data.lists[i];
       break;
     }
@@ -162,14 +162,6 @@ function refreshItems() {
   }
 }
 
-
-/*function addListe() {
-    var idListe = document.getElementById("listBuy");
-    var newElement = document.createElement("li");
-    newElement.textContent = "Dynamisch Erzeugt";
-    newElement.className = "Einkaufsliste";
-    idListe.appendChild(newElement);
-}*/
 
 function addItem(name, id, checked) {
   let ulListe = document.getElementById("ListeEinerEinkaufsliste");
@@ -293,33 +285,68 @@ console.info("Script loaded..");
 init();
 
 
-//ANES
-
-
-
-$(document).ready(function(){
-  $("#mobile_listen_auf").click(function(){
+$(document).ready(function () {
+  $("#mobile_listen_auf").click(function () {
     $("#EinkaufslistenDropDown").css("visibility", "visible");
     $(".main").css("visibility", "visible");
     $("#EintragHinzufügen").css("visibility", "visible");
-    $("#mobile_listen_auf").css("visibility", "hidden"); 
+    $("#mobile_listen_auf").css("visibility", "hidden");
     $("#leftbar").show();
     $("#EinkaufslistenDropDown").show();
     $("body").css("position", "fixed");
-    $("body").animate({left: "200px"});
-    $("body").animate({right: "-200px"});
+    $("body").animate({ left: "200px" });
+    $("body").animate({ right: "-200px" });
   });
-  $("button#Xen").click(function(){
+  $("button#Xen").click(function () {
     $("#EinkaufslistenDropDown").css("visibility", "hidden");
     $(".main").css("visibility", "hidden");
     $("#EintragHinzufügen").css("visibility", "hidden");
     $("#mobile_listen_auf").css("visibility", "visible");
     $("#leftbar").hide();
     $("body").css("position", "unset");
-    $("body").animate({left: "0px"});
-    $("body").animate({right: "0px"});
+    $("body").css("left", "unset");
+    $("body").css("right", "unset");
+  });
+  $("#theme").click(function () {
+    $("li#Impressum, li#Agb, li#Kontakt, li#Hilfe").css("color", "blue");
+    $("li.leftborder").css("color", "blue");
+    $("li#Impressum:hover, li#Agb:hover, li#Kontakt:hover, li#Hilfe:hover").css("color", "yellow");
+    $("div#EinkaufslistenDropDown").css("border", "1px solid blue");
+    $("div#EinkaufslistenDropDown").css("background-color", "lightblue");
+    $("button#DropDownPfeil1").css("background-color", "blue");
+    $("button#DropDownPfeil1").css("border", "1px solid lightblue");
+    $("ul#listBuy li.Einkaufsliste a:hover").css("border", "1px solid blue");
+    $("ul#listBuy").css("border", "1px solid blue");
+    $("ul#listBuy").css("border-top", "unset");
+    $("ul#listBuy").css("background-color", "aliceblue");
+    $("div#EintragHinzufügen").css("border", "1px solid blue");
+    $("div#EintragHinzufügen").css("border-top", "unset");
+    $("li.Einkaufsliste").css("color", "blue");
+    $("li.Einkaufsliste.liActive").css("background", "#93b9ff");
+    $("p#neueListe").css("color", "blue");
+    $("a.EinkaufslisteStyle").css("color", "blue");
+    $("input#Eingabe").css("color", "darkblue");
+    $("input#Eingabe").css("border", "1px solid blue");
+    $("input#Eingabe").css("background-color", "lightblue");
+    $("li.ItemEinerEinkaufsliste").css("border", "1px solid blue");
+    $("li.ItemEinerEinkaufsliste").css("background", "aliceblue");
+    $("div.ListeEinerEinkaufsliste").css("border", "1px solid blue");
+    $(".main").css("background-color", "#e1e1ff");
+    $(".checkBox").css("border", "1px solid darkblue");
+    $("#fontplus").css("display", "block");
+    $("#plusimg").css("display", "none");
+    $("#mobile_listen_auf").css("color", "blue");
+    $("#leftbar").css("background", "rgba(167, 176, 236, 0.805)");
+    $("#Xen").css("border", "2px solid blue");
+    $("#Xen").css("border-right", "unset");
+    $("#theme").css("display", "none");
+    $("#theme2").css("display", "block");
+    $("li.Einkaufsliste.liActive").css("background-color", "#d9dcf9");
   });
 
+  $("#theme2").click(function () {
+    location.reload();
+  });
 
   $(window).resize(checkSize);
 
@@ -328,14 +355,13 @@ $(document).ready(function(){
 var smallerBefore = false;
 
 function checkSize() {
-  if($(".jqueryTrigger").css("float") == "none" && smallerBefore == true) {
+  if ($(".jqueryTrigger").css("float") == "none" && smallerBefore == true) {
     location.reload();
-  } else if($(".jqueryTrigger").css("float") == "left") {
+  } else if ($(".jqueryTrigger").css("float") == "left") {
     smallerBefore = true;
   }
 }
 
-//Anes du hast hier definiert das wenn du draufklickst es immer hidden bleibt sodass es sich auch bei größeren Bildschirmen so eingestellt hat
 
 
 
