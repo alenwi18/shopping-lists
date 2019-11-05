@@ -308,18 +308,20 @@ $(document).ready(function () {
     $("body").css("right", "unset");
   });
   $("#theme").click(function () {
-    $("li#Impressum, li#Agb, li#Kontakt, li#Hilfe").css("color", "blue");
-    $("li.leftborder").css("color", "blue");
-    $("li#Impressum:hover, li#Agb:hover, li#Kontakt:hover, li#Hilfe:hover").css("color", "yellow");
+    $("li#Impressum, li#Agb, li#Kontakt, li#Hilfe").css("color", "rgb(0, 0, 207)");
+    $("li.leftborder").css("color", "rgb(0, 0, 207)");
+    $("li#Impressum_hover, li#Agb_hover, li#Kontakt_hover, li#Hilfe_hover").css("color", "yellow");
     $("div#EinkaufslistenDropDown").css("border", "1px solid blue");
-    $("div#EinkaufslistenDropDown").css("background-color", "lightblue");
+    $("div#EinkaufslistenDropDown").css("background-color", "#a0e8ff");
     $("button#DropDownPfeil1").css("background-color", "blue");
-    $("button#DropDownPfeil1").css("border", "1px solid lightblue");
-    $("ul#listBuy li.Einkaufsliste a:hover").css("border", "1px solid blue");
+    $("button#DropDownPfeil1").css("border", "1px solid #a0e8ff");
+    $("p#TextEinkaufsliste").css("color", "#002bff");
+    $("ul#listBuy li.Einkaufsliste a:hover").css("border", "1px solid rgb(0, 0, 207)");
+    $("li.leftborder").css("border-left", "2px solid rgb(0, 0, 207)");
     $("ul#listBuy").css("border", "1px solid blue");
     $("ul#listBuy").css("border-top", "unset");
     $("ul#listBuy").css("background-color", "aliceblue");
-    $("div#EintragHinzufügen").css("border", "1px solid blue");
+    $("div#EintragHinzufügen").css("border", "1px solid rgb(0, 0, 207)");
     $("div#EintragHinzufügen").css("border-top", "unset");
     $("li.Einkaufsliste").css("color", "blue");
     $("li.Einkaufsliste.liActive").css("background", "#93b9ff");
@@ -327,26 +329,44 @@ $(document).ready(function () {
     $("a.EinkaufslisteStyle").css("color", "blue");
     $("input#Eingabe").css("color", "darkblue");
     $("input#Eingabe").css("border", "1px solid blue");
-    $("input#Eingabe").css("background-color", "lightblue");
-    $("li.ItemEinerEinkaufsliste").css("border", "1px solid blue");
+    $("input#Eingabe").css("background-color", "#a0e8ff");
+    $("li.ItemEinerEinkaufsliste").css("border", "1px solid rgb(0, 0, 207)");
     $("li.ItemEinerEinkaufsliste").css("background", "aliceblue");
-    $("div.ListeEinerEinkaufsliste").css("border", "1px solid blue");
+    $("div.ListeEinerEinkaufsliste").css("border", "1px solid rgb(0, 0, 207)");
     $(".main").css("background-color", "#e1e1ff");
     $(".checkBox").css("border", "1px solid darkblue");
     $("#fontplus").css("display", "block");
+    $("#shoppingcart").css("display", "block");
     $("#plusimg").css("display", "none");
-    $("#mobile_listen_auf").css("color", "blue");
+    $("#Einkaufskorb").css("display", "none");
+    $("#mobile_listen_auf").css("color", "#0000cf");
     $("#leftbar").css("background", "rgba(167, 176, 236, 0.805)");
-    $("#Xen").css("border", "2px solid blue");
+    $("#Xen").css("border", "2px solid rgb(0, 0, 207)");
     $("#Xen").css("border-right", "unset");
     $("#theme").css("display", "none");
     $("#theme2").css("display", "block");
-    $("li.Einkaufsliste.liActive").css("background-color", "#d9dcf9");
+    $(".main2").css("background-position", "center");
+    $(".main2").css("background-size", "cover");
   });
 
   $("#theme2").click(function () {
     location.reload();
   });
+
+  $("#theme").click(function () {
+  $("#listBuy").click(function () {
+    $("li.ItemEinerEinkaufsliste").css("background", "aliceblue");
+    $("li.ItemEinerEinkaufsliste").css("border", "1px solid rgb(0, 0, 207)");
+  });
+
+  $(".Einkaufsliste").click(function () {
+    $(".Einkaufsliste").css("background", "aliceblue");
+  });
+
+  $(".Einkaufsliste").click(function () {
+    $("li.Einkaufsliste.liActive").css("background", "rgb(147, 185, 255)");
+  });
+});
 
   $(window).resize(checkSize);
 
