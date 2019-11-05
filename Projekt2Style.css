@@ -54,7 +54,7 @@ ul#footerListe {
   text-align: center;
 }
 
-li#Impressum, li#Agb, li#Kontakt, li#Hilfe {
+li#Impressum, li#Agb, li#Kontakt, li#Hilfe, li#präsibutton {
   display: inline;
   margin-left: 10px;
   color: #C71585;
