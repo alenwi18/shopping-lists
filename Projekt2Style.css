@@ -123,7 +123,7 @@ ul#listBuy li.Einkaufsliste a {
 }
 
 ul#listBuy li.Einkaufsliste a:hover {
-  border: 1px solid #C71585;
+  border: 1px solid black;
   padding: 9px;
 }
 

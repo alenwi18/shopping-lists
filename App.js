@@ -310,13 +310,11 @@ $(document).ready(function () {
   $("#theme").click(function () {
     $("li#Impressum, li#Agb, li#Kontakt, li#Hilfe").css("color", "rgb(0, 0, 207)");
     $("li.leftborder").css("color", "rgb(0, 0, 207)");
-    $("li#Impressum_hover, li#Agb_hover, li#Kontakt_hover, li#Hilfe_hover").css("color", "yellow");
     $("div#EinkaufslistenDropDown").css("border", "1px solid blue");
     $("div#EinkaufslistenDropDown").css("background-color", "#a0e8ff");
     $("button#DropDownPfeil1").css("background-color", "blue");
     $("button#DropDownPfeil1").css("border", "1px solid #a0e8ff");
     $("p#TextEinkaufsliste").css("color", "#002bff");
-    $("ul#listBuy li.Einkaufsliste a:hover").css("border", "1px solid rgb(0, 0, 207)");
     $("li.leftborder").css("border-left", "2px solid rgb(0, 0, 207)");
     $("ul#listBuy").css("border", "1px solid blue");
     $("ul#listBuy").css("border-top", "unset");
@@ -347,7 +345,22 @@ $(document).ready(function () {
     $("#theme2").css("display", "block");
     $(".main2").css("background-position", "center");
     $(".main2").css("background-size", "cover");
+    $("li#Impressum").mouseover(function() {
+      $("li#Impressum").css("color", "lightblue");
+    });
+    $("li#Agb").mouseover(function() {
+      $("li#Agb").css("color", "lightblue");
+    });
+    $("li#Kontakt").mouseover(function() {
+      $("li#Kontakt").css("color", "lightblue");
+    });
+    $("li#Hilfe").mouseover(function() {
+      $("li#Hilfe").css("color", "lightblue");
+    });
+    $(".main2").mouseover(function() {
+      $("li#Impressum, li#Agb, li#Kontakt, li#Hilfe").css("color", "blue");
   });
+});
 
   $("#theme2").click(function () {
     location.reload();
@@ -367,6 +380,8 @@ $(document).ready(function () {
     $("li.Einkaufsliste.liActive").css("background", "rgb(147, 185, 255)");
   });
 });
+
+  
 
   $(window).resize(checkSize);
 
