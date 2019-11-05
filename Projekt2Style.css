@@ -315,6 +315,18 @@ input:focus {
   padding-left: 6px;
 }
 
+  #präsicolor {
+    color: #C71585;
+  }
+
+  #präsicolor:link {
+    color: red;
+  }
+
+  #präsicolor:hover {
+    color: red;
+  }
+
 @media screen and (max-width: 1432px) and (min-width: 825px) {
 
   body {
@@ -501,6 +513,12 @@ input:focus {
 }
 
 @media screen and (max-width: 500px) and (min-width: 0px) {
+
+  ul#listBuy li.Einkaufsliste a:hover {
+    border: 0.01px solid grey;
+    padding: 10px;
+  }
+
   div#EinkaufslistenDropDown {
     width: 198px;
     height: 65%;
@@ -778,4 +796,16 @@ input:focus {
   li.ItemEinerEinkaufsliste {
     width: 52%;
 }
+}
+
+@media screen and (max-width: 290px) and (min-width: 240px) {
+  li.ItemEinerEinkaufsliste {
+    width: 45%;
+}
+}
+
+@media screen and (max-width: 240px) and (min-width: 0px) {
+  body{
+    display: none;
+  }
 }

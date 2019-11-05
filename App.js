@@ -345,6 +345,8 @@ $(document).ready(function () {
     $("#theme2").css("display", "block");
     $(".main2").css("background-position", "center");
     $(".main2").css("background-size", "cover");
+    $("#präsicolor").css("color", "blue");
+    $("div#EintragHinzufügen").css("background-color", "rgba(191, 255, 246, 0.905)");
     $("li#Impressum").mouseover(function() {
       $("li#Impressum").css("color", "lightblue");
     });
@@ -359,6 +361,12 @@ $(document).ready(function () {
     });
     $(".main2").mouseover(function() {
       $("li#Impressum, li#Agb, li#Kontakt, li#Hilfe").css("color", "blue");
+  });
+    $("li#präsibutton").mouseover(function() {
+      $("li#präsibutton").css("color", "red");
+  });
+    $(".main2").mouseover(function() {
+      $("li#präsibutton").css("color", "blue");
   });
 });
 
