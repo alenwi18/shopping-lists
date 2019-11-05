@@ -381,13 +381,7 @@ input:focus {
     padding-top: 17px;
     padding-bottom: 17px;
   }
-  ul#ListeEinerEinkaufsliste {
-    margin-top: 0px;
-    margin-right: -438px;
-    float: right;
-    width: 438px;
-    margin-top: 50px;
-  }
+  
   ul#ListeEinerEinkaufsliste {
     width: 35%;
     margin-right: -35%;
