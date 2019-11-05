@@ -5,6 +5,7 @@ const settings = {
   password: ""
 };
 
+
 function init() {
   let button = document.getElementById("DropDownPfeil1");
   let list = document.getElementById("listBuy");
@@ -154,12 +155,13 @@ function refreshItems() {
       }
     }
     if (!selList)
-      return; 
+      return; // HILFE keine Liste :/
     for (item of selList.items) {
       addItem(item.name, item._id, item.bought);
     }
   }
 }
+
 
 function addItem(name, id, checked) {
   let ulListe = document.getElementById("ListeEinerEinkaufsliste");
@@ -215,6 +217,8 @@ function changeState(id, checked) {
   };
 }
 
+
+
 function createItem() {
   if (!data.selectedList)
     return;
@@ -246,6 +250,7 @@ function createItem() {
   };
 }
 
+
 function deleteItem(id) {
   var item = document.querySelector("#it" + id);
   item.parentElement.removeChild(item);
@@ -273,8 +278,12 @@ function deleteItem(id) {
   };
 }
 
+
+
+
 console.info("Script loaded..");
 init();
+
 
 $(document).ready(function () {
   $("#mobile_listen_auf").click(function () {
@@ -338,47 +347,49 @@ $(document).ready(function () {
     $(".main2").css("background-size", "cover");
     $("#präsicolor").css("color", "blue");
     $("div#EintragHinzufügen").css("background-color", "rgba(191, 255, 246, 0.905)");
-    $("li#Impressum").mouseover(function () {
+    $("li#Impressum").mouseover(function() {
       $("li#Impressum").css("color", "lightblue");
     });
-    $("li#Agb").mouseover(function () {
+    $("li#Agb").mouseover(function() {
       $("li#Agb").css("color", "lightblue");
     });
-    $("li#Kontakt").mouseover(function () {
+    $("li#Kontakt").mouseover(function() {
       $("li#Kontakt").css("color", "lightblue");
     });
-    $("li#Hilfe").mouseover(function () {
+    $("li#Hilfe").mouseover(function() {
       $("li#Hilfe").css("color", "lightblue");
     });
-    $(".main2").mouseover(function () {
+    $(".main2").mouseover(function() {
       $("li#Impressum, li#Agb, li#Kontakt, li#Hilfe").css("color", "blue");
-    });
-    $("li#präsibutton").mouseover(function () {
-      $("li#präsibutton").css("color", "red");
-    });
-    $(".main2").mouseover(function () {
-      $("li#präsibutton").css("color", "blue");
-    });
   });
+    $("li#präsibutton").mouseover(function() {
+      $("li#präsibutton").css("color", "red");
+  });
+    $(".main2").mouseover(function() {
+      $("li#präsibutton").css("color", "blue");
+  });
+});
 
   $("#theme2").click(function () {
     location.reload();
   });
 
   $("#theme").click(function () {
-    $("#listBuy").click(function () {
-      $("li.ItemEinerEinkaufsliste").css("background", "aliceblue");
-      $("li.ItemEinerEinkaufsliste").css("border", "1px solid rgb(0, 0, 207)");
-    });
-
-    $(".Einkaufsliste").click(function () {
-      $(".Einkaufsliste").css("background", "aliceblue");
-    });
-
-    $(".Einkaufsliste").click(function () {
-      $("li.Einkaufsliste.liActive").css("background", "rgb(147, 185, 255)");
-    });
+  $("#listBuy").click(function () {
+    $("li.ItemEinerEinkaufsliste").css("background", "aliceblue");
+    $("li.ItemEinerEinkaufsliste").css("border", "1px solid rgb(0, 0, 207)");
   });
+
+  $(".Einkaufsliste").click(function () {
+    $(".Einkaufsliste").css("background", "aliceblue");
+  });
+
+  $(".Einkaufsliste").click(function () {
+    $("li.Einkaufsliste.liActive").css("background", "rgb(147, 185, 255)");
+  });
+});
+
+  
 
   $(window).resize(checkSize);
 
