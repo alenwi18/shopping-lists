@@ -5,6 +5,7 @@ const settings = {
   password: ""
 };
 
+
 function init() {
   let button = document.getElementById("DropDownPfeil1");
   let list = document.getElementById("listBuy");
@@ -161,6 +162,7 @@ function refreshItems() {
   }
 }
 
+
 function addItem(name, id, checked) {
   let ulListe = document.getElementById("ListeEinerEinkaufsliste");
   let liElem = document.createElement("li");
@@ -187,7 +189,8 @@ function addItem(name, id, checked) {
     deleteItem(id);
   });
 }
- 
+
+//neu hinzugefügt 
 function changeState(id, checked) {
   var request = new XMLHttpRequest();
   request.open('PUT', settings.endpoint + "/api/v1/lists/" + data.selectedList + "/items/" + id, true);
@@ -213,6 +216,8 @@ function changeState(id, checked) {
     console.error("Connection Error");
   };
 }
+
+
 
 function createItem() {
   if (!data.selectedList)
@@ -273,8 +278,12 @@ function deleteItem(id) {
   };
 }
 
+
+
+
 console.info("Script loaded..");
 init();
+
 
 $(document).ready(function () {
   $("#mobile_listen_auf").click(function () {

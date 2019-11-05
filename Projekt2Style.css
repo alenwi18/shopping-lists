@@ -31,6 +31,8 @@
   background-color: white;
 }
 
+
+
 img#HomeLogo {
   width: 368px;
   height: 162px;
@@ -184,18 +186,23 @@ button#Plus {
 
 /*
 .Einkaufsliste{
+
   padding-left: 300px;
   display: block;
   padding: 10px;
   font-family: sans-serif;
   margin-left: 10px;
+
+
 }
 
 .Einkaufsliste:hover{
+
   border: 1px solid #C71585;
   padding: 9px;
-}
-*/
+
+
+}*/
 
 a.EinkaufslisteStyle {
   text-decoration: none;
@@ -297,11 +304,13 @@ input:focus {
   display: none;
 }
 
+
 @media screen and (max-width: 1432px) and (min-width: 825px) {
 
   body {
     overflow: hidden;
   }
+
   div#EinkaufslistenDropDown {
     width: 34%;
     height: 96%;
@@ -372,14 +381,19 @@ input:focus {
     padding-top: 17px;
     padding-bottom: 17px;
   }
- 
   ul#ListeEinerEinkaufsliste {
-    width: 35% ;
+    margin-top: 0px;
+    margin-right: -438px;
+    float: right;
+    width: 438px;
+    margin-top: 50px;
+  }
+  ul#ListeEinerEinkaufsliste {
+    width: 35%;
     margin-right: -35%;
     float: right;
     margin-top: 50px;
   }
- 
 }
 
 @media screen and (max-width: 825px) and (min-width: 500px) {
