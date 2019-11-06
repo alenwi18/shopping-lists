@@ -250,7 +250,6 @@ function createItem() {
   };
 }
 
-
 function deleteItem(id) {
   var item = document.querySelector("#it" + id);
   item.parentElement.removeChild(item);
@@ -278,12 +277,8 @@ function deleteItem(id) {
   };
 }
 
-
-
-
 console.info("Script loaded..");
 init();
-
 
 $(document).ready(function () {
   $("#mobile_listen_auf").click(function () {
@@ -388,8 +383,6 @@ $(document).ready(function () {
     $("li.Einkaufsliste.liActive").css("background", "rgb(147, 185, 255)");
   });
 });
-
-  
 
   $(window).resize(checkSize);
 
